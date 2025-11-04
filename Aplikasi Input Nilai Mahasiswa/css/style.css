@@ -1,0 +1,219 @@
+/* /css/style.css */
+
+/* Menambahkan font agar tampilan lebih profesional */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Palet Warna Elegan */
+:root {
+    --primary-color: #004d99; /* Biru Tua/Navy untuk kesan profesional */
+    --secondary-color: #ffc107; /* Emas/Kuning untuk aksen elegan */
+    --text-color: #343a40;
+    --background-color: #f0f2f5; /* Latar belakang halaman (untuk baris genap) */
+    --card-bg: #ffffff; /* Latar belakang Card dan Baris Ganjil Tabel (Putih) */
+}
+
+body {
+    background-color: var(--background-color); 
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Navbar Styling (Latar Belakang Biru, Tulisan Putih) --- */
+.navbar {
+    background-color: var(--primary-color) !important; /* Latar Belakang Biru Tua */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    border-bottom: 3px solid var(--secondary-color); /* Garis Aksen Bawah Kuning */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--card-bg) !important; /* Warna Brand Putih */
+    font-size: 1.6rem; 
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8) !important; /* Teks Putih semi-transparan */
+    padding: 8px 15px;
+    margin-left: 5px;
+    border-radius: 6px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease, box-shadow 0.2s ease;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important; /* Teks: Biru Tua */
+    background-color: var(--secondary-color) !important; /* Latar Belakang: Kuning Emas (Tombol Aktif) */
+    border-bottom: 3px solid var(--primary-color); /* Garis Bawah: Biru Tua */
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.nav-link:hover {
+    color: var(--card-bg) !important;
+    background-color: rgba(255, 255, 255, 0.15); /* Latar belakang putih sangat tipis */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Card Styling (Form & Table Container) --- */
+.card {
+    background-color: var(--card-bg);
+    /* Bayangan Card yang Kuat */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efek hover ringan */
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.75rem;
+    border-bottom: 4px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px !important;
+    display: inline-block;
+}
+
+/* --- Button Styling --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #003366;
+    border-color: #003366;
+    transform: translateY(-1px);
+}
+
+/* --- Form Control Styling --- */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 77, 153, 0.25);
+}
+
+/* --- Table Styling (halaman lihatdatamhs.html) --- */
+.table {
+    border-radius: 8px;
+    overflow: hidden; 
+    border-collapse: separate; 
+    border-spacing: 0; 
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border: none;
+    vertical-align: middle;
+    padding: 12px;
+}
+
+/* Menambahkan Garis Bawah Horizontal pada setiap baris data */
+.table td {
+    vertical-align: middle;
+    padding: 12px; 
+    border-bottom: 1px solid #dee2e6; 
+    border-top: none; 
+}
+
+/* Hilangkan garis bawah pada sel di baris terakhir agar rapi di dalam card */
+.table-striped > tbody > tr:last-child > td {
+    border-bottom: none;
+}
+
+
+/* Baris Ganjil (Putih Murni) */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: var(--card-bg); 
+}
+
+/* Baris Genap (Latar Belakang Halaman) */
+.table-striped > tbody > tr:nth-of-type(even) > * {
+    background-color: var(--background-color); 
+}
+
+/* EFEK HOVER BARIS TABEL (lebih halus) */
+.table-hover tbody tr {
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e2f0ff !important; /* Biru muda */
+    transform: none; 
+    box-shadow: none; 
+}
+
+
+/* --- Container Padding --- */
+.container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Tambahan: Responsif/Jumbotron Ringan untuk Input */
+@media (min-width: 768px) {
+    .card-input-form {
+        padding: 50px;
+    }
+}
+
+/* ------------------------------------------- */
+/* --- Styling Tombol Aksi (Edit & Hapus) --- */
+/* ------------------------------------------- */
+
+.btn-aksi-edit, .btn-aksi-hapus {
+    font-size: 0.75rem; 
+    padding: 4px 8px; 
+    font-weight: 600;
+    border-radius: 6px; 
+    transition: background-color 0.2s ease;
+    min-width: 55px; 
+}
+
+/* Tombol Edit */
+.btn-aksi-edit {
+    background-color: var(--primary-color); 
+    color: white;
+    border: 1px solid var(--primary-color);
+    margin-right: 5px; 
+}
+
+.btn-aksi-edit:hover {
+    background-color: #003366; 
+    border-color: #003366;
+    color: white;
+    transform: none; 
+}
+
+/* Tombol Hapus */
+.btn-aksi-hapus {
+    background-color: #dc3545; 
+    color: white;
+    border: 1px solid #dc3545;
+}
+
+.btn-aksi-hapus:hover {
+    background-color: #c82333; 
+    border-color: #c82333;
+    color: white;
+    transform: none;
+}
